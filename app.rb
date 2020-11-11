@@ -1,5 +1,7 @@
 require 'sinatra/base'
 
+set :session_secret, 'super secret'
+
 class Battle < Sinatra::Base
   get "/" do
     erb :index
