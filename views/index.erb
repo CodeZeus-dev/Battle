@@ -1,24 +1,26 @@
-<head>
-  <style>
-    #form {
-        font-family: Baskerville;
-        color: darkblue;
-    }
-    #submit {
-        border: solid darkblue;
-    }
-  </style>
-</head>
+<html>
+  <head>
+    <style>
+        #form {
+            font-family: Baskerville;
+            color: darkblue;
+        }
+        #submit {
+            border: solid darkblue;
+        }
+    </style>
+  </head>
 
-<body>
+  <body>
   <h1>Welcome to the Eternal Battle Game!</h1>
   <div id="form">
     Please enter the names of the two players:<br><br>
     <form action="/names" method="post">
-        Player 1: <input type='text' name='name1'><br><br>
-        Player 2: <input type='text' name='name2'><br><br>
+      Player 1: <input type='text' name='name1'><br><br>
+      Player 2: <input type='text' name='name2'><br><br>
       <input id="submit" type="submit" value='Submit'>
     </form>
   </div>
-</body>
+  </body>
+</html>
 

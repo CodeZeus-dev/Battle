@@ -105,6 +105,7 @@ RSpec.configure do |config|
   require 'capybara'
   require 'capybara/rspec'
   require 'rspec'
+  require_relative './features/webhelper.rb'
 
   Capybara.app = Battle
 end

@@ -7,11 +7,23 @@ describe Battle, type: :feature do
   end
 
   it "expects players to fill in their names in a form, submit the form and see the names on screen" do
-    visit '/'
-    fill_in('name1', with: 'John')
-    fill_in('name2', with: 'Mary')
-    click_button("Submit")
+    signup_and_play
     expect(page).to have_content('John')
     expect(page).to have_content('Mary')
+  end
+
+  context 'attacking the opponent' do
+    it "attacks the opponent" do
+      signup_and_play
+      click_button("Attack")
+      expect(page).to have_content('John')
+      expect(page).to have_content('Mary')
+    end
+
+    it 'subtracts 10 points from the opponent\'s HP' do
+      signup_and_play
+      click_button("Attack")
+      expect(page).to have_content(90)
+    end
   end
 end

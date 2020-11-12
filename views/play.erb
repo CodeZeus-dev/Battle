@@ -1,5 +1,30 @@
-<div>
-  The names of the two players are:<br><br><br>
-  Player 1: <%= @name1 %> <br><br>
-  Player 2: <%= @name2 %>
-</div>
+<html>
+  <head>
+    <style>
+      #player1_div {
+          border: solid darkblue;
+      }
+    </style>
+  </head>
+<body>
+  <div>
+    <%= $player1.name %> VS <%= $player2.name %><br><br>
+    <h2>Get ready for battle!</h2><br><br>
+
+    <div id="player1_div">
+      <%= $player1.name %> Hit Points: <%= $player1.hit_points %>
+    </div>
+
+    <div id="player2_div">
+      <%= $player2.name %> Hit Points: <%= $player2.hit_points %>
+    </div>
+
+    <br><br><br>
+
+    <form action="/attack" method="post">
+      <input type="submit" value="Attack">
+    </form>
+
+  </div>
+</body>
+</html>
