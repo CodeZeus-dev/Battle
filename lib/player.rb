@@ -4,7 +4,7 @@ class Player
 
   attr_reader :hit_points, :name
 
-  def initialize(name = nil)
+  def initialize(name)
     @name = name
     @hit_points = MAX_HIT_POINTS
   end
