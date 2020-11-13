@@ -9,10 +9,6 @@ class Player
     @hit_points = MAX_HIT_POINTS
   end
 
-  def attack(opponent)
-    opponent.get_hit
-  end
-
   def get_hit
     @hit_points -= 10
   end

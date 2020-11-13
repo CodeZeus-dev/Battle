@@ -4,6 +4,7 @@ describe Player do
 
   subject(:player) { Player.new("Constantine") }
   let(:opponent) { Player.new("Alex") }
+  let(:game) { Game.new(player, opponent) }
 
   it 'creates an instance of the Player class' do
     expect(player).to be_instance_of(Player)
@@ -19,19 +20,13 @@ describe Player do
     end
   end
 
-  describe "#attack" do
-    it 'is called on an instance of Player' do
-      expect(player).to respond_to(:attack).with(1).argument
-    end
-  end
-
   describe "#get_hit" do
     it 'is called on an instance of Player' do
       expect(player).to respond_to(:get_hit)
     end
 
     it 'subtracts 1 from the hit_points' do
-      expect { player.attack(opponent) }.to change{ opponent.hit_points }.by(-10)
+      expect { game.attack(opponent) }.to change{ opponent.hit_points }.by(-10)
     end
   end
 end
